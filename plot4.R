@@ -32,7 +32,7 @@ axis(1, at=c(1, 1441, 2880), labels = c("Thu", "Fri", "Sat"))
 axis(2, las=2)
 box()
 
-legend("topright", bty="n", inset=c(0,-0.06),
+legend("topright", bty="n", inset=c(0,-0.05),
        legend = paste0("Sub_metering_",1:3),
        col=c("black", "red", "blue"), lty=1,
        y.intersp=0.3, cex=0.5)
