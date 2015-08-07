@@ -1,11 +1,13 @@
 
 datos = read.csv("HPC_assignment1.csv")
 
+graphics.off()
+
 par(mfrow=c(2,2))
 
 # Figure (1,1)
 plot(datos$Global_active_power, type="l", axes=FALSE,
-     xlab="", ylab="Global Active Power (kilowatts)")
+     xlab="", ylab="Global Active Power")
 
 axis(1, at=c(1, 1441, 2880), labels = c("Thu", "Fri", "Sat"))
 axis(2, las=2)
@@ -30,10 +32,10 @@ axis(1, at=c(1, 1441, 2880), labels = c("Thu", "Fri", "Sat"))
 axis(2, las=2)
 box()
 
-legend("topright", 
+legend("topright", bty="n", inset=c(0,-0.06),
        legend = paste0("Sub_metering_",1:3),
        col=c("black", "red", "blue"), lty=1,
-       y.intersp=0.5, cex=0.5)
+       y.intersp=0.3, cex=0.5)
 
 # Figure (2,2)
 
@@ -44,5 +46,5 @@ axis(1, at=c(1, 1441, 2880), labels = c("Thu", "Fri", "Sat"))
 axis(2)
 box()
 
-dev.copy(png, file="plot4.png",  width = 480, height = 480)
+dev.copy(png, file="plot4.png", width = 480, height = 480)
 dev.off()
